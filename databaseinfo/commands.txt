@@ -1,0 +1,91 @@
+CREATE TABLE `Lokaverkefni`.`userbase` ( `userid` INT(255) NOT NULL , `name` VARCHAR(255) NOT NULL , `sex` VARCHAR(10) NULL , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `pass` VARCHAR(255) NOT NULL DEFAULT 'pass.123' , `date_joined` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `profilepic` VARCHAR(255) NULL , PRIMARY KEY (`userid`), UNIQUE (`username`)) ENGINE = InnoDB;
+ALTER TABLE `userbase` ADD `trainer_id` INT NULL DEFAULT NULL AFTER `profilepic`;
+
+CREATE TABLE `Lokaverkefni`.`brjostaefingar` ( `id` INT NOT NULL AUTO_INCREMENT , `nafn` VARCHAR NOT NULL , `hjalp` VARCHAR NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `brjostaefingar`(`nafn`, `hjalp`,`level`) 
+VALUES ("Bekkpressa með stöng","https://www.youtube.com/watch?v=rT7DgCr-3pg","Easy"),
+("Hallandi bekkpressa í smith vél","https://www.youtube.com/watch?v=b8DqTO6ak0k","Easy"),
+("Brjóstpressa með handlóðum","https://www.youtube.com/watch?v=SHsUIZiNdeY","Easy"),
+("Flug með handlóðum","https://www.youtube.com/watch?v=eozdVDA78K0","Easy"),
+("Armbeygjur","https://www.youtube.com/watch?v=IODxDxX7oi4","Easy"),
+("Standandi flug í vírum","https://www.youtube.com/watch?v=mEvWejskeSk","Easy"),
+("Þröngar armbeygjur","https://www.youtube.com/watch?v=J0DnG1_S92I","Medium"),
+("Dýfur - brjóst útgáfa","https://www.youtube.com/watch?v=x_3sNsauCsU","Medium"),
+("Hallandi brjóstpressa með handlóðum","https://www.youtube.com/watch?v=ggJycLjz01E","Easy"),
+("Brjóstpressa í vél","https://www.youtube.com/watch?v=n8TOta_pfr4","Easy"),
+("HEX Brjóstpressa","https://www.youtube.com/watch?v=shDGQ91KeG4","Medium")
+
+CREATE TABLE `Lokaverkefni`.`bakaefingar` ( `id` INT(255) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `hjalp` VARCHAR(255) NOT NULL , `level` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `bakaefingar`(`name`, `hjalp`, `level`) VALUES ("Róður með handlóði á bekk","https://www.youtube.com/watch?v=-koP10y1qZI","Easy"),
+("Niðurtog að brjósti vítt grip","https://www.youtube.com/watch?v=6HACIuk2SCk","Easy"),
+("Upphýfingar vítt grip","https://www.youtube.com/watch?v=iywjqUo5nmU","Medium"),
+("Upphýfingar öfugt grip axlarbreidd","https://www.youtube.com/watch?v=JXvS3iRYy24","Medium"),
+("Standandi róður með handlóðum","https://www.youtube.com/watch?v=pTT_MCK0L90","Easy"),
+("Upright row með handlóðum","https://www.youtube.com/watch?v=IhZLB48kluc","Easy"),
+("Öfugur róður í smith vél","https://www.youtube.com/watch?v=XZV9IwluPjw","Medium"),
+("Sitjandi róður í vír","https://www.youtube.com/watch?v=GZbfZ033f74","Easy"),
+("Niðurtog að brjósti með V-gripi","https://www.youtube.com/watch?v=EjIETxOawcg","Easy"),
+("Standandi róður m beinni stöng","https://www.youtube.com/watch?v=I-qgwlP0J90","Easy"),
+("Burpee upphýfingar","https://www.youtube.com/watch?v=jVzrLDIRqnE","Medium")
+
+
+CREATE TABLE `Lokaverkefni`.`fotaaefingar` ( `id` INT(255) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `hjalp` VARCHAR(255) NOT NULL , `level` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `fotaaefingar`(`name`, `hjalp`, `level`) VALUES ("Hnébeygja með stöng","https://www.youtube.com/watch?v=Dy28eq2PjcM","Medium"),
+("Réttstöðulyfta","https://www.youtube.com/watch?v=RyJbvWAh6ec","Medium"),
+("Uppstig - Afturstig kombó","https://www.youtube.com/watch?v=yfYGB6qU6Ug","Medium"),
+("Hnébeygja með eigin þyngd","https://www.youtube.com/watch?v=HlBiYwfhz0M","Easy"),
+("Framstig með handlóðum","https://www.youtube.com/watch?v=D7KaRcUTQeE","Easy"),
+("Framstigs hopp","https://www.youtube.com/watch?v=y7Iug7eC0dk","Medium"),
+("Fótapressa einn fótur í einu","https://www.youtube.com/watch?v=xT5-HS6e9O4","Easy"),
+("Stíf réttstöðulyfta með handlóðum","https://www.youtube.com/watch?v=zb3_RByAevs","Easy"),
+("Sitjandi Fótabeygjur","https://www.youtube.com/watch?v=MkYV4op9H6s","Easy"),
+("Split hnébeygja með fót á bekk","https://www.youtube.com/watch?v=T--Sg-g0vnw","Medium"),
+("Hamstrengur á bolta með báðum fótum","https://www.youtube.com/watch?v=oAYtwM95-ug","Easy"),
+("Fótapressa","https://www.youtube.com/watch?v=IZxyjW7MPJQ","Medium"),
+("Standandi kálfar í stiga","https://www.youtube.com/watch?v=iaDLGelypRw","Easy"),
+("Sitjandi kálfar í fótapressu","https://www.youtube.com/watch?v=W-NU8NUS8lI","Easy"),
+("Dauðagangan með handlóð","https://www.youtube.com/watch?v=2o_lal2jpQc","Medium"),
+("Splitthopp með fót á bekk","https://www.youtube.com/watch?v=WKkSdzXdz84","Easy")
+
+CREATE TABLE `Lokaverkefni`.`axlaaefingar` ( `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY, `name` VARCHAR(255) NOT NULL , `hjalp` VARCHAR(255) NOT NULL , `level` VARCHAR(30) NOT NULL ) ENGINE = InnoDB;
+INSERT INTO `axlaaefingar`(`name`, `hjalp`, `level`) VALUES ("Sitjandi axlapressa með handlóðum á bekk","https://www.youtube.com/watch?v=qEwKCR5JCog","Easy"),
+("Axlalyfta til hliðar með handlóðum","https://www.youtube.com/watch?v=FeJP4E4Z-PY","Easy"),
+("Axlalyfta fram á við með handlóðum","https://www.youtube.com/watch?v=cdKAwIwgrGc","Easy"),
+("Standandi axlapressa með stöng","https://www.youtube.com/watch?v=2yjwXTZQDDI","Easy"),
+("Clean And Press með handlóðum","https://www.youtube.com/watch?v=2YedyLmkDRE","Medium"),
+("Aftari axlir sitjandi á bekk","https://www.youtube.com/watch?v=EA7u4Q_8HQ0","Easy"),
+("Upright row","https://www.youtube.com/watch?v=aHlrxmL3S6o","Easy"),
+("Axlapressa með annari hendi","https://www.youtube.com/watch?v=1oUF4jWNzSs","Easy"),
+("Arnold axlapressa","https://www.youtube.com/watch?v=BZZJuIC_JiU","Medium"),
+("Standandi axlapressa með handlóðum","https://www.youtube.com/watch?v=bgp15lWs4Zg","Easy"),
+("Standandi sprengi axlapressa með stöng","https://www.youtube.com/watch?v=rp4nGWKQZlM","Medium")
+
+CREATE TABLE `Lokaverkefni`.`handaaefingar` ( `id` INT(255) NOT NULL AUTO_INCREMENT , `name` INT(255) NOT NULL , `hjalp` INT(255) NOT NULL , `level` INT(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `handaaefingar`(`name`, `hjalp`, `level`) VALUES ("Trícep réttur í vír með beinni stöng","https://www.youtube.com/watch?v=8WL0m0vLAPo", "Easy"),
+("Trícep réttur í vír með beinni stöng","https://www.youtube.com/watch?v=8WL0m0vLAPo", "Easy"),
+("Trícep réttur í vír með reipi","https://www.youtube.com/watch?v=vB5OHsJ3EME", "Easy"),
+("Standandi hallandi fram þríhöfðapressa í reipi","https://www.youtube.com/watch?v=RQwciHsspL0", "Easy"),
+("Þríhöfðapressa með E-Z stöng á flötum bekk","https://www.youtube.com/watch?v=PIC1OUTyAD4", "Medium"),
+("Tvíhöfðalyfta í vír","https://www.youtube.com/watch?v=kyyP5l8noSY", "Easy"),
+("Tvíhöfðalyfta með E-Z stöng","https://www.youtube.com/watch?v=kwG2ipFRgfo", "Easy"),
+("Hamar með handlóðum","https://www.youtube.com/watch?v=TwD-YGVP4Bk", "Easy"),
+("Preacher Curls","https://www.youtube.com/watch?v=DoCWeUBA0Gs", "Easy"),
+("Standandi þríhöfðapressa með handlóði","https://www.youtube.com/watch?v=_gsUck-7M74", "Easy"),
+("Þríhöfðapressa með handlóðum á flötum bekk","https://www.youtube.com/watch?v=MO_03opCc0g", "Easy"),
+("Sitjandi Tvihöfðalyfta m handlóðum á hallandi bekk","https://www.youtube.com/watch?v=bwimaxl_nlE", "Easy"),
+("Bísep með beinni stöng 3svar sjö","https://www.youtube.com/watch?v=-EYxR-4gYu8", "Medium"),
+("Dýfur á bekk","https://www.youtube.com/watch?v=lPXJMzFXFvc", "Easy"),
+("Dýfur","https://www.youtube.com/watch?v=wjUmnZH528Y", "Medium"),
+("Zottman Tvíhöfðalyfta ","https://www.youtube.com/watch?v=ZrpRBgswtHs", "Medium")
+
+INSERT INTO `magaaefingar`(`name`, `hjalp`, `level`) VALUES ("Kviður á bolta","https://www.youtube.com/watch?v=gwwNST1hwgI","Easy"),
+("Hliðar planki","https://www.youtube.com/watch?v=NXr4Fw8q60o","Medium"),
+("Kviður með reipi","https://www.youtube.com/watch?v=E_FenCXyRXE","Easy"),
+("Planki með hné að olnbogum","https://www.youtube.com/watch?v=BbAlt_BzQ_8","Medium"),
+("Planki","https://www.youtube.com/watch?v=pSHjTRCQxIw","Easy"),
+("Kviður á niðurhallandi bekk með handlóði og snúning","https://www.youtube.com/watch?v=gwwNST1hwgI","Easy"),
+("Fótalyftur í vél","https://www.youtube.com/watch?v=ghwdoXHeiIk","Easy"),
+("Fótalyftur í vél fætur út","https://www.youtube.com/watch?v=-1y41d45yfU","Medium")
+
+
+
