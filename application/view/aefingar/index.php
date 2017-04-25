@@ -2,20 +2,25 @@
 <!-- About Us Page
 ==========================================-->
 <div id="tf-about">
+    <div class="aefingaslider">
     <div class="container text-center ">
-            <h4>Bekkpressa með stöng - Reps/kg/hvíld <a class="info" href="https://www.youtube.com/watch?v=oDnQLo5sclQ"> Leiðbeiningar </a></h4>
-            <ul class="aefingar">
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-                <li><input class='reps' type='text' value='10' ></input>/<input class='kg' type='text' >kg </input> /1</li>
-            </ul>
+        <table id="aefingar">
+            <tr>
+                <th> Æfing </th>
+                <th > Reps </th>
+                <th> Kg </th>
+                <th> Hvíld </th>
+                <th> Leiðbeiningar </th>
+            </tr>
+            <?php
+            $chest = URL+"/aefingar/showchest";
+             echo gettype($chest);
+
+            ?>
+        </table>
             <hr>
 
+    </div>
     </div>
 
 <!-- Hvatningarorðin
