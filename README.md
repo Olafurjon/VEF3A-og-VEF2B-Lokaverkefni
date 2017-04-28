@@ -22,4 +22,5 @@ Skrá út takkinn virkar til að skrá út,l það er kominn upp profile síða 
 <li>http://178.62.25.29/profile</li>
 <li>http://178.62.25.29/nyskraning</li>
 <li>http://178.62.25.29/innskraning</li>
-<br> 24/4/17 - Fundið til upplýsingar og settar í gagnagrunninn til að vinna með, æfingardagar osfrv
+<br> 24/4/17 - Fundið til upplýsingar og settar í gagnagrunninn til að vinna með, æfingardagar osfrv <br>
+28/4/17 - Núna birtast default æfingarnar á síðunni undir æfingar, einnig er bætt við flettara með jquery þannig að það skiptist um æfingar "í realtime" ef þú ýtir á Bak, fætur, etc, eftir á að bæta virkni við í töflu
