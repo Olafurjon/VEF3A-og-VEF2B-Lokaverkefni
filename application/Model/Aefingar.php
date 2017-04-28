@@ -23,7 +23,6 @@ class Aefingar extends Model
     {
 
         $sql = "SELECT * FROM brjostaefingar";
-
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -43,7 +42,7 @@ class Aefingar extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll();
     }
 
     public function getAllLegs()
@@ -54,7 +53,7 @@ class Aefingar extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll();
     }
 
     public function getAllShoulders()
@@ -65,7 +64,7 @@ class Aefingar extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll();
     }
 
     public function getAllHands()
@@ -76,7 +75,7 @@ class Aefingar extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll();
     }
 
     public function getallAbs()
@@ -87,7 +86,7 @@ class Aefingar extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll();
     }
 
 

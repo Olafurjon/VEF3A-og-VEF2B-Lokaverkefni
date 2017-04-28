@@ -27,6 +27,12 @@ class AefingarController
         // load views. within the views we can echo out $songs and $amount_of_songs easily
 
         require APP . 'view/_templates/header.php';
+
+        $brjost = $this->showChest();
+        $back = $this->showBak();
+        $faetur = $this->showLegs();
+
+
         require APP . 'view/aefingar/index.php';
         require APP . 'view/_templates/footer.php';
 
@@ -39,6 +45,23 @@ class AefingarController
         $brjostaefingar =  $gym->getAllChest();
         return $brjostaefingar;
     }
+
+    public function showBak()
+    {
+        $gym = new Aefingar();
+        $bak =  $gym->getAllbBack();
+        return $bak;
+    }
+
+    public function showLegs()
+    {
+        $gym = new Aefingar();
+        $legs =  $gym->getAllLegs();
+        return $legs;
+    }
+
+
+
 
 
 
