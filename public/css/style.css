@@ -173,6 +173,7 @@ a.fa.fa-angle-down:hover{
 }
 /* About Section */
 #tf-about{
+    text-align: center;
 	padding: 80px 0;
 
 }
@@ -675,4 +676,45 @@ img.dpmynd {
 .kg
 {
 	width: 50px;
+}
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+table#aefingar
+{
+	margin:auto;
+    margin-top:3%;
+}
+.fela
+{
+    display: none;
+}
+.aefingaslider
+{
+    display: inline-flex;
+    margin-top:8%;
+}
+.syna
+{
+ display: inline-table;
+}
+.xk2
+{
+	color:red; !important;
+	font-style: italic;
+	fonnt-style: underline;
+}
+.xk2:focus
+{
+	color:red; !important;
+	font-style: italic;
+	fonnt-style: underline;
+}
+.bt{
+    padding:2px;
 }

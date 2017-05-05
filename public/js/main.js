@@ -141,7 +141,6 @@ function main() {
             e.stopPropagation();
         });
 
-        $(":file").filestyle({buttonText: "Find file"});
 
     });
 
