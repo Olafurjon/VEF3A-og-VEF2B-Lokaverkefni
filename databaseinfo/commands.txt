@@ -88,4 +88,4 @@ INSERT INTO `magaaefingar`(`name`, `hjalp`, `level`) VALUES ("Kviður á bolta",
 ("Fótalyftur í vél fætur út","https://www.youtube.com/watch?v=-1y41d45yfU","Medium")
 
 
-
+gæti vantað einhver alter hérna inn..
