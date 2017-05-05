@@ -22,9 +22,11 @@ class InnskraningController
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
      */
+
     public function index()
     {
         // load views. within the views we can echo out $songs and $amount_of_songs easily
+
         require APP . 'view/_templates/header.php';
         require APP . 'view/innskraning/index.php';
         require APP . 'view/_templates/footer.php';
@@ -61,25 +63,26 @@ class InnskraningController
 
     function innskra()
     {
-        ob_start();
-        require APP . 'view/_templates/header.php';
+            ob_start();
+            require APP . 'view/_templates/header.php';
 
-        if (isset($_POST['innskra'])) {
-            $notandi = new Innskraning();
-            $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
-            $ret = array($obj);
-            print_r($ret);
-            if ($ret[0]->username == $_POST['user']) {
-                $_SESSION['username'] = $_POST['user'];
-                ob_get_clean();
-                header('location:'. URL.'profile' );
+            if (isset($_POST['innskra'])) {
+                $notandi = new Innskraning();
+                $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
+                $ret = array($obj);
+                print_r($ret);
+                if ($ret[0]->username == $_POST['user']) {
+                    $_SESSION['username'] = $_POST['user'];
+                    ob_get_clean();
+                    header('location:' . URL . 'profile');
+                }
+                else
+                {   require APP . 'view/error/index.php';
+                    echo "<h1>Notendanafn eða lykilorð ekki rétt</h1>";
+                }
 
-            } else {
-                print "lykilorð";
+
             }
-
-
-        }
 
 
     }

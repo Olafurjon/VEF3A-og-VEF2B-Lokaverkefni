@@ -31,7 +31,9 @@ class AefingarController
         $brjost = $this->showChest();
         $back = $this->showBak();
         $faetur = $this->showLegs();
-
+        $shoulders = $this->showShoulders();
+        $hendur = $this->showHands();
+        $abs = $this->showAbs();
 
         require APP . 'view/aefingar/index.php';
         require APP . 'view/_templates/footer.php';
@@ -59,6 +61,29 @@ class AefingarController
         $legs =  $gym->getAllLegs();
         return $legs;
     }
+
+    public function showShoulders()
+    {
+        $gym = new Aefingar();
+        $shoulders =  $gym->getAllShoulders();
+        return $shoulders;
+    }
+
+    public function showHands()
+    {
+        $gym = new Aefingar();
+        $hendur =  $gym->getAllHands();
+        return $hendur;
+    }
+
+    public function ShowAbs()
+    {
+        $gym = new Aefingar();
+        $abs =  $gym->getallAbs();
+        return $abs;
+    }
+
+
 
 
 

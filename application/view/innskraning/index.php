@@ -11,6 +11,7 @@
             <div class="clearfix"></div>
             <form class="register" action="<?php echo URL;?>innskraning/innskra" method="post">
                 <label for="user">Notendanafn:</label>
+                <?php if(isset($error)){ echo "<span class='valid'> Notendafn eða lykilorð ekki rétt  </span>";} ?>
                 <input id="user" name="user" type="text"><br>
                 <label for="pass">Lykilorð:</label>
                 <input id="pass" name="pass" type="password"><br>

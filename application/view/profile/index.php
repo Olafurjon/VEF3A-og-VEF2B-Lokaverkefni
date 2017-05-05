@@ -1,25 +1,29 @@
 <?php header("Cache-Control: no-cache, must-revalidate") ?> <!-- Þessi lína hreinsar cacheið svo að vafrinn festist ekki á einni profile mynd -->
 <div id="tf-about tf-about-profile">
     <div class="container text-center">
-        <div class="col-md-9">
 
             <div class="section-title ">
                 <h4>Upplýsingar</h4>
             </div>
             <div class="dpimg">
+
                 <?php if ($info[0]->sex == "Kvenkyns"){ $pic = 'src="'.URL.'/img/profile/dp_default/defaultfemale.jpg"';} else { $pic = 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}  ?>
-            <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'"';} else {echo $pic;}?>">
-                <form action="<?php echo URL;?>profile/upload" method="post" enctype="multipart/form-data" >
-                        <input type="file" name="image" id="image"  >
-                        <input type="submit" name="upload" id="upload" value="Breyta" >
+            <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'?='.Date('U').'"';} else {echo $pic;}?>">
+                <form class="uploadform" action="<?php echo URL;?>profile/upload" method="post" enctype="multipart/form-data" >
+                    <input type="file" name="image" id="image"  >
+                    <input  type="submit" name="upload" id="upload" value="Breyta" >
                 </form>
             </div>
+
+
                 <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
 
                     <label for="nafn">Nafn:</label>
                     <input id="nafn" name="nafn" type="text" value=" <?php echo $info[0]->name; ?>" required>
                     <label for="username">Notendanafn:</label>
                     <input id="username" name="username" type="text" value=" <?php echo $info[0]->username; ?>" readonly>
+                    <label for="username">Þjálfari:</label>
+                    <input id="username" name="username" type="text" value=" <?php if( $info[0]->trainer_id == null) {echo "Sæktu um þjálfara";} else { echo $info[0]->trainer_id;} ?>" readonly>
                     <label for="user">Netfang:</label>
                     <input id="user" name="user" type="email" value="<?php echo $info[0]->email;?>" readonly ><br>
                     <label for="kyn">Kyn:</label>
@@ -35,10 +39,12 @@
 
             </div>
 
+
+    </div>
+
             <hr>
             <div class="clearfix"></div>
 
-        </div>
     </div>
 
 <!-- Hvatningarorðin

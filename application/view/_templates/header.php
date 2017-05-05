@@ -10,7 +10,10 @@ else
 {
     $session = false;
 };
-
+if(isset($error))
+{
+    $error = $true;
+}
 
 ?>
 <html lang="en">
@@ -22,7 +25,6 @@ else
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="http://178.62.25.29/css/style.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="<?php echo URL?>/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL?>/fonts/font-awesome/css/font-awesome.css">

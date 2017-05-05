@@ -3,16 +3,15 @@
 ==========================================-->
 <div id="tf-about">
     <div class="aefingaslider">
-        <a href="#upp" class="fyrrisida"><i class="fa fa-step-backward"></i></a>
-        <a href="#upp" class="bt "><p class="btsida1"> Brjóst </p></a>
+        <a href="#upp" class=""><p class="bt btsida1"> Brjóst </p></a>
         <a href="#upp" <p class="bt btsida2"> Bak </p></a>
         <a href="#upp" <p class="bt btsida3"> Fætur </p></a>
         <a href="#upp" <p class="bt btsida4"> Axlir </p></a>
         <a href="#upp" <p class="bt btsida5"> Hendur </p></a>
         <a href="#upp" <p class="bt btsida6"> Kviður </p></a>
-        <a href="#upp" class="bt seinnisida"><i class="fa fa-step-forward"></i></a>
-    </div>
 
+    </div>
+    <div class="popup" id="media-popup"><iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
     <div class="container text-center ">
         <div id="Brjóst" class="slideraefing syna ">
         <table id="aefingar">
@@ -124,18 +123,122 @@
                 </table>
                 <hr>
             </div>
-        <div class="aefingaslider">
-            <a href="#upp" class="fyrrisida"><i class="fa fa-step-backward"></i></a>
-            <a href="#upp" class="bt "><p class="btsida1"> Brjóst </p></a>
-            <a href="#upp" <p class="bt btsida2"> Bak </p></a>
-            <a href="#upp" <p class="bt btsida3"> Fætur </p></a>
-            <a href="#upp" <p class="bt btsida4"> Axlir </p></a>
-            <a href="#upp" <p class="bt btsida5"> Hendur </p></a>
-            <a href="#upp" <p class="bt btsida6"> Kviður </p></a>
-            <a href="#upp" class="bt seinnisida"><i class="fa fa-step-forward"></i></a>
+
+        <div id="Axlir" class="slideraefing fela">
+            <table id="aefingar">
+                <tr>
+                    <th> Æfing </th>
+                    <th> Reps </th>
+                    <th> Kg </th>
+                    <th> Hvíld </th>
+                    <th> Leiðbeiningar </th>
+                </tr>
+                <tr>
+                    <td> Upphitun</td>
+                    <td> 10 mín</td>
+                    <td> </td>
+                    <td></td>
+                    <td> Bretti/stigavél etc...</td>
+                </tr>
+                <?php
+                defaultWorkout($shoulders);
+                ?>
+                <tr>
+                    <td> Brennsla</td>
+                    <td> 20-30 mín</td>
+                    <td> </td>
+                    <td></td>
+                    <td> Bretti/stigavél etc...</td>
+                </tr>
+                <tr>
+                    <td> Teygja í teygjuherbergi</td>
+                    <td> 5-10 mín</td>
+                    <td></td>
+                    <td> </td>
+                    <td> Teygja á vöðvum</td>
+                </tr>
+            </table>
+            <hr>
         </div>
 
+        <div id="Hendur" class="slideraefing fela">
+            <table id="aefingar">
+                <tr>
+                    <th> Æfing </th>
+                    <th> Reps </th>
+                    <th> Kg </th>
+                    <th> Hvíld </th>
+                    <th> Leiðbeiningar </th>
+                </tr>
+                <tr>
+                    <td> Upphitun</td>
+                    <td> 10 mín</td>
+                    <td> </td>
+                    <td></td>
+                    <td> Bretti/stigavél etc...</td>
+                </tr>
+                <?php
+                defaultWorkout($hendur);
+                ?>
+                <tr>
+                    <td> Brennsla</td>
+                    <td> 20-30 mín</td>
+                    <td> </td>
+                    <td></td>
+                    <td> Bretti/stigavél etc...</td>
+                </tr>
+                <tr>
+                    <td> Teygja í teygjuherbergi</td>
+                    <td> 5-10 mín</td>
+                    <td></td>
+                    <td> </td>
+                    <td> Teygja á vöðvum</td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+
+        <div id="Kviður" class="slideraefing fela">
+            <table id="aefingar">
+                <tr>
+                    <th> Æfing </th>
+                    <th> Reps </th>
+                    <th> Kg </th>
+                    <th> Hvíld </th>
+                    <th> Leiðbeiningar </th>
+                </tr>
+                <tr>
+                    <td> Upphitun</td>
+                    <td> 10 mín</td>
+                    <td> </td>
+                    <td></td>
+                    <td> Bretti/stigavél etc...</td>
+                </tr>
+                <?php
+                defaultWorkout($abs);
+                ?>
+                <tr>
+                    <td> Brennsla</td>
+                    <td> 20-30 mín</td>
+                    <td> </td>
+                    <td></td>
+                    <td> Bretti/stigavél etc...</td>
+                </tr>
+                <tr>
+                    <td> Teygja í teygjuherbergi</td>
+                    <td> 5-10 mín</td>
+                    <td></td>
+                    <td> </td>
+                    <td> Teygja á vöðvum</td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+
+
+
     </div>
+
 
 <!-- Hvatningarorðin
 ==========================================-->
@@ -241,7 +344,9 @@ function defaultWorkout($aefing)
         echo "<td> $k </td>";
         echo "<td> <input class='kg'> </td> ";
         echo "<td> 1 mín </td>";
-        echo "<td rowspan='4'><a href='".$aef->hjalp  ."'>Hjálparvideo</a> </td>";
+        $url = $aef->hjalp;
+        $url = str_replace("watch?v=","embed/",$url);
+        echo "<td rowspan='4'><a href='#media-popup' data-media='" . $url  ."'>Hjálparvideo</a> </td>";
         if($i == 0 or $i == 4 ){$k -= 2;}
 
         echo "</tr>";

@@ -106,6 +106,7 @@ class ProfileController
         $profile->UploadDP();
         header('location: ' . URL . 'profile/');
 
+
         }
     }
 

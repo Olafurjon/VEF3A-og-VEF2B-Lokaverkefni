@@ -22,7 +22,7 @@ class Profile extends Model
     public function getUserInfo($username)
     {
 
-        $sql = "SELECT name, username,email,sex, pass, date_joined,profilepic FROM userbase WHERE username ='".$username."'";
+        $sql = "SELECT * FROM userbase WHERE username ='".$username."'";
 
         $query = $this->db->prepare($sql);
         $query->execute();
