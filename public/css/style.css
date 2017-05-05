@@ -598,9 +598,14 @@ nav#footer p{
 }
 .register
 {
-	display: table-caption;
-	margin: 10%;
-	margin-top: 50%;
+    display: grid;
+    /* margin: 10%; */
+    /* margin-top: 50%; */
+    text-align: justify;
+    /* float: right; */
+    width: 200px;
+    margin: inherit;
+    margin-top: -15px;
 }
 .status-available
 {
@@ -617,15 +622,18 @@ span#user-availability-status {
 p.under {
 	font-size: 50%;
 }
-
-img.dpmynd {
+.dpimg {
 	float: left;
+}
+
+img.dmynd {
 	height: 300px;
-	margin: 10%;
 	width: 400px;
 }
 .section-title {
 	padding: 10px;
+	margin-top: 15%;
+	text-align: center;
 }
 .popup {
 	position:absolute;
@@ -717,4 +725,17 @@ table#aefingar
 }
 .bt{
     padding:2px;
+}
+form.uploadform
+{
+	text-align: justify; !important;
+}
+
+img.dpmynd {
+    height: 300px;
+    width: 400px;
+}
+.register input
+{
+    text-align :center;
 }
