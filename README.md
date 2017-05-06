@@ -18,6 +18,7 @@ Vefur kominn upp og aðeins lagað forsíðuna ásamt því fengið virkni í a�
 Nýskráning og innskráning virkar ásamt því að þú getur uploadað profile mynd og breytt upplýsingum (hinsvegar er stored cache vandamál með profile mynd það þarf stundum að cleara stored images úr cachei til að laga það að hún breytist við upload)<br>
 Skrá út takkinn virkar til að skrá út,l það er kominn upp profile síða og æfingar síða þannig eftirfarandi slóðir virka<br>
 <li>http://178.62.25.29/</li>
+<li>http://sterkari.eu/</li>
 <li>http://178.62.25.29/aefingar</li>
 <li>http://178.62.25.29/profile</li>
 <li>http://178.62.25.29/nyskraning</li>
@@ -25,4 +26,6 @@ Skrá út takkinn virkar til að skrá út,l það er kominn upp profile síða 
 <br> 24/4/17 - Fundið til upplýsingar og settar í gagnagrunninn til að vinna með, æfingardagar osfrv <br>
 28/4/17 - Núna birtast default æfingarnar á síðunni undir æfingar, einnig er bætt við flettara með jquery þannig að það skiptist um æfingar "í realtime" ef þú ýtir á Bak, fætur, etc, eftir á að bæta virkni við í töflu<br>
 5/5/5 - Hef gleymt að logga nokkrar breytingar en smá updates sem ég man eftir, Issue með að valin æfing highlighte-aðist ekki, vandamáli var síðan bara mjög basic og kjánalega auðvelt þannig vill helst ekki tjá mig um hvað var að, popup video komin á æfingasíðuna þannig að þú þarft ekki að verða redirectaður á Youtube þau bara opnast í andlitið á þér, profile pic ætti(hefur verið að virka 100% hjá mér) alltaf að endurnýja profilemyndina ef þú ert að uploada nýrri, bætti við timestamp á endann þannig að alltaf nýjasta ætti að koma, það var vandmál með að þar sem þetta heitir alltaf bara profile.jpg þá var það store-að í cachinu án uppfærsla. það sem verður á döfinni síðan er að bæta inn þjálfarasíðunni, bæta inn custom æfingm fyrir þjálfara og að sækja um þjálfara, vonandi síðan error prevention og útlitslaganir.<br>
-Þjálfara síðan kominn upp, getur smellt á hafa samband þá opnast svona messagebox þar sem þú getur talað við hann, eftir á að implimenta, formið sett upp með fallegri virkni, einnig lagað jquery validationið fyrir nýskráningar, einnig þegar þú smellir á hafa samband kemur nafn þjálfarans sjálkrafa innaní boxið
+06/05/2017 - Þjálfara síðan kominn upp, getur smellt á hafa samband þá opnast svona messagebox þar sem þú getur talað við hann, eftir á að implimenta, formið sett upp með fallegri virkni, einnig lagað jquery validationið fyrir nýskráningar, einnig þegar þú smellir á hafa samband kemur nafn þjálfarans sjálkrafa innaní boxið <br>
+06/05/2017 - http://www.sterkari.eu/ var sett mér tilgamans á domainið sterkari.eu, þannig hún er aðgengileg af veraldarvefnum gegnum hana, hefði kannski átt að eyða meiri tíma í að hugsa nafnið en fór með það fyrsta sem mér datt í hug... <br>
+
