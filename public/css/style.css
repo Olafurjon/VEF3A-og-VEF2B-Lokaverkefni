@@ -212,6 +212,30 @@ ul.about-list li span{
 	background-attachment: fixed;
 	padding: 80px 0;
 }
+
+#tf-team2{
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+
+
+#tf-team2 .item .thumbnail:hover>img.img-circle.team-img{
+	border: 4px solid #FCAC45;
+}
+#tf-team2 .thumbnail {
+	background: transparent;
+	border: 0;
+}
+
+#tf-team2 .thumbnail .caption {
+	padding: 9px;
+	color: #FCAC45;
+}
+
+
 .section-title.center{
 	padding: 30px 0;
 }
@@ -466,6 +490,15 @@ ol.type li a.active { font-weight: 700; }
     color: #ffffff;
 }
 
+.newpic2 {
+	background: url(../img/07.jpg) !important;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	color: #ffffff;
+}
+
 /* Testimonials Section */
 #tf-testimonials{
 	background: url(../img/05.jpg);
@@ -632,7 +665,6 @@ img.dmynd {
 }
 .section-title {
 	padding: 10px;
-	margin-top: 15%;
 	text-align: center;
 }
 .popup {
@@ -705,7 +737,6 @@ table#aefingar
 .aefingaslider
 {
     display: inline-flex;
-    margin-top:8%;
 }
 .syna
 {
@@ -738,4 +769,110 @@ img.dpmynd {
 .register input
 {
     text-align :center;
+}
+.profiletitle
+{
+	/*margin-top:15%;*/
+}
+.sectionh2
+{
+	margin-top: 12%;
+}
+.section-title.profiletitle.sectionh2 {
+	margin-top: 13.5%;
+}
+.MakeMessage
+{
+	width: 100%;
+	background-color: #d5d5d5;
+	padding:3px;
+
+}
+.thjalfuninputs
+{
+	padding: 3em 0 0 3em;
+}
+
+.form-style-6{
+	color: #FCAC45;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+}
+.form-style-6 h1{
+	background: #43D1AF;
+	padding: 20px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -16px -16px 16px -16px;
+}
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 textarea
+{
+	height: 120px;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+{
+	box-shadow: 0 0 5px #FCAC45;
+	padding: 3%;
+	border: 1px solid #FCAC45;
+}
+
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="reset"],
+.form-style-6 input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 47%;
+	padding: 3%;
+	background: #FCAC45;
+	border-bottom: 2px solid #FCAB29;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	color: #fff;
+}
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="reset"]:hover,
+.form-style-6 input[type="button"]:hover{
+	background: #FCCC45;
 }

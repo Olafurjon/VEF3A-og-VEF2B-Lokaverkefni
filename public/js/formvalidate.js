@@ -8,7 +8,7 @@ $('#username').on('blur', function() {
 
 function checkAvailability() {
     jQuery.ajax({
-        url: "http://178.62.25.29/nyskraning/validation",
+        url: "http://www.sterkari.eu/nyskraning/validation",
         data:'username='+$("#username").val(),
         type: "POST",
         success:function(data){

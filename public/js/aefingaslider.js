@@ -1,17 +1,9 @@
 
-    $(".bt").click(function (e) {
-        var tar = $(e.target);
-
+    $(".bt").click(function () {
         $(".bt").each(function () {
             $(this).removeClass("xk2");
         });
-        var comp = tar[0].innerHTML.toString()
-        tar.addClass("xk2");
-
-
-
-
-
+        $(this).addClass("xk2");
         $syna = $(this)[0].innerText;
         $(".slideraefing").each(function () {
             $(this).addClass("fela");
