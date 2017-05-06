@@ -14,23 +14,53 @@
 
 namespace Mini\Controller;
 
-use Mini\Model\Innskraning;
+use Mini\Model\Thjalfun;
 
-class InnskraningController
+class ThjalfunController
 {
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
      */
-
     public function index()
     {
-        // load views. within the views we can echo out $songs and $amount_of_songs easily
 
+
+        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
-        require APP . 'view/innskraning/index.php';
+        $thjalfun = new Thjalfun();
+        if(isset($username)) {
+            $info = $thjalfun->getUserInfo($_SESSION['username']);
+        }
+        $trainers = $thjalfun->getTrainers();
+
+        require APP . 'view/thjalfun/index.php';
+
         require APP . 'view/_templates/footer.php';
 
+
+    }
+
+    public function logoutlink(){
+        ob_start();
+        require APP . 'view/_templates/header.php';
+        session_destroy();
+        ob_get_clean();
+        header("location:". URL );
+    }
+
+
+
+    public function logout()
+        {
+        $notandi = new Profile();
+        if(isset($_POST["logout"])) {
+            print("isset");
+            $notandi->logout();
+
+        }
+        print("logout");
+            #header("location: http://178.62.25.29/");
     }
 
     /**
@@ -41,7 +71,6 @@ class InnskraningController
      * the user back to songs/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
-
 
     public function validation()
     {
@@ -58,35 +87,44 @@ class InnskraningController
      * This is an example of how to handle a GET request.
      * @param int $song_id Id of the to-delete song
      */
-
-
-
-    function innskra()
+    public function deleteSong($song_id)
     {
-            ob_start();
-            require APP . 'view/_templates/header.php';
+        // if we have an id of a song that should be deleted
+        if (isset($song_id)) {
+            // Instance new Model (Song)
+            $Song = new Song();
+            // do deleteSong() in model/model.php
+            $Song->deleteSong($song_id);
+        }
 
-            if (isset($_POST['innskra'])) {
-                $notandi = new Innskraning();
-                $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
-                $ret = array($obj);
-                print_r($ret);
-                if ($ret[0]->username == $_POST['user']) {
-                    $_SESSION['username'] = $_POST['user'];
-                    ob_get_clean();
-                    header('location:' . URL . 'profile');
-                }
-                else
-                {
-
-                }
-
-
-            }
-
-
+        // where to go after song has been deleted
+        header('location: ' . URL . 'songs/index');
     }
 
+    public function upload()
+    {
+        if (isset($_POST['upload'])) {
+        $profile = new Profile();
+        $profile->UploadDP();
+        header('location: ' . URL . 'profile/');
+
+        }
+    }
+
+
+    public function breyta()
+    {
+        // if we have POST data to create a new song entry
+        if (isset($_POST["breyta"])) {
+            // Instance new Model (Song)
+            $profile = new Profile();
+            // do updateSong() from model/model.php
+            $profile->breyta($_POST["nafn"], $_POST["pass"], $_POST["user"]);
+
+        }
+        // where to go after song has been added
+        header('location: ' . URL . 'profile/');
+    }
 
     /**
      * AJAX-ACTION: ajaxGetStats

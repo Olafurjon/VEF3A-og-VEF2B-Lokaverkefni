@@ -15,6 +15,7 @@
                             <select name="kyn" id="kyn">
                             <option id="KK" name="KK" value="Karlkyns">Karlkyns</option>
                             <option id="KVK" name="KVK" value="Kvenkyns">Kvenkyns</option>
+                            <option id="HK" name="HK" value="Annað">Annað</option>
                             </select>
                             <label for="email">Netfang:</label>
                             <input id="email" name="email" type="email" required>
@@ -28,7 +29,6 @@
 
                             <input id="btnyskra" name="nyskra" type="submit" value="Nýskrá">
                         </form>
-        <?php print_r($_POST); ?>
         </div>
     </div>
 

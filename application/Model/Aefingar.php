@@ -89,6 +89,17 @@ class Aefingar extends Model
         return $query->fetchAll();
     }
 
+    public function checkTrainer($username)
+    {
+        $sql = "SELECT * FROM userbase WHERE username ='".$username."'";
+
+
+        $query = $this->db->prepare($sql);
+        $query->execute();
+
+        return $query->fetchAll();
+    }
+
 
 
 

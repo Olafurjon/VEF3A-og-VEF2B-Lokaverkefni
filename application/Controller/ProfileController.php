@@ -14,6 +14,7 @@
 
 namespace Mini\Controller;
 
+use Mini\Model\Aefingar;
 use Mini\Model\Profile;
 
 class ProfileController
@@ -30,7 +31,10 @@ class ProfileController
         require APP . 'view/_templates/header.php';
         $profile = new Profile();
         $info = $profile->getUserInfo($_SESSION['username']);
-
+        if(!isset($_SESSION['username']))
+        {
+            header('location:' . URL . 'Innskraning');
+        }
 
         require APP . 'view/profile/index.php';
 
@@ -44,7 +48,7 @@ class ProfileController
         require APP . 'view/_templates/header.php';
         session_destroy();
         ob_get_clean();
-        header("location: http://178.62.25.29/");
+        header("location:" . URL);
     }
 
 
@@ -105,7 +109,6 @@ class ProfileController
         $profile = new Profile();
         $profile->UploadDP();
         header('location: ' . URL . 'profile/');
-
 
         }
     }

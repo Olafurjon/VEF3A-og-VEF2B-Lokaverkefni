@@ -2,12 +2,12 @@
 <div id="tf-about tf-about-profile">
     <div class="container text-center">
 
-            <div class="section-title ">
+            <div class="section-title profiletitle sectionh2 ">
                 <h4>Upplýsingar</h4>
             </div>
             <div class="dpimg">
 
-                <?php if ($info[0]->sex == "Kvenkyns"){ $pic = 'src="'.URL.'/img/profile/dp_default/defaultfemale.jpg"';} else { $pic = 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}  ?>
+                <?php if ($info[0]->sex == "Kvenkyns"){ $pic = 'src="'.URL.'/img/profile/dp_default/defaultfemale.jpg"';} elseif ($info[0]->sex == "Annað"){$pic = 'src="'.URL.'/img/profile/dp_default/defaultother.jpg"';} else { $pic = 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}  ?>
             <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'?='.Date('U').'"';} else {echo $pic;}?>">
                 <form class="uploadform" action="<?php echo URL;?>profile/upload" method="post" enctype="multipart/form-data" >
                     <input type="file" name="image" id="image"  >
@@ -18,7 +18,7 @@
 
                 <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
 
-                    <label for="nafn">Nafn:</label>
+                    <label for="nafn">Nafns:</label>
                     <input id="nafn" name="nafn" type="text" value=" <?php echo $info[0]->name; ?>" required>
                     <label for="username">Notendanafn:</label>
                     <input id="username" name="username" type="text" value=" <?php echo $info[0]->username; ?>" readonly>

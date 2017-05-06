@@ -34,8 +34,12 @@ class AefingarController
         $shoulders = $this->showShoulders();
         $hendur = $this->showHands();
         $abs = $this->showAbs();
-
+        $profile = new Aefingar();
+        if(isset($username)) {
+            $info = $profile->checktrainer($username);
+        }
         require APP . 'view/aefingar/index.php';
+
         require APP . 'view/_templates/footer.php';
 
 
@@ -82,10 +86,6 @@ class AefingarController
         $abs =  $gym->getallAbs();
         return $abs;
     }
-
-
-
-
 
 
 

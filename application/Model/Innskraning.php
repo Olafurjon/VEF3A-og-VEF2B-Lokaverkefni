@@ -91,8 +91,7 @@ class Innskraning extends Model
 
         $query->execute($parameters);
 
-        // fetch() is the PDO method that get exactly one result
-        return $query->fetch();
+            return $query->fetch();
     }
 
 

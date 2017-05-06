@@ -2,13 +2,19 @@
 <!-- About Us Page
 ==========================================-->
 <div id="tf-about">
+    <div class="section-title profiletitle ">
+        <h4>Æfingar</h4>
+        <?php if(!isset($_SESSION['username'])) {echo "<p>Mundu að skrá þig inn til að komast á sérsniðin æfingarplön </p>";} ?>
+        <?php if((isset($_SESSION['username']) && $info[0]->trainer_id == null)) {echo "<p> <a href='".URL."/thjalfun'>Smelltu hér</a> til að sækja um þjálfara og fá sérsniðin plön </p>";} ?>
+</div>
+
     <div class="aefingaslider">
-        <a href="#upp" class=""><p class="bt btsida1"> Brjóst </p></a>
-        <a href="#upp" <p class="bt btsida2"> Bak </p></a>
-        <a href="#upp" <p class="bt btsida3"> Fætur </p></a>
-        <a href="#upp" <p class="bt btsida4"> Axlir </p></a>
-        <a href="#upp" <p class="bt btsida5"> Hendur </p></a>
-        <a href="#upp" <p class="bt btsida6"> Kviður </p></a>
+        <a href="#upp" ><p class="bt btsida1 xk2"> Brjóst </p></a>
+        <a href="#upp" ><p class="bt btsida2"> Bak </p></a>
+        <a href="#upp" ><p class="bt btsida3"> Fætur </p></a>
+        <a href="#upp" ><p class="bt btsida4"> Axlir </p></a>
+        <a href="#upp" ><p class="bt btsida5"> Hendur </p></a>
+        <a href="#upp" ><p class="bt btsida6"> Kviður </p></a>
 
     </div>
     <div class="popup" id="media-popup"><iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
