@@ -1,13 +1,14 @@
 
-<!-- About Us Page
+<!-- Nýskráning
 ==========================================-->
 <div id="tf-about">
-    <div class="container text-center">
+    <div class="container text-center form-style-6"">
                     <div class="section-title ">
                         <h4>Nýskraning</h4>
                     </div>
                         <hr>
                         <div class="clearfix"></div>
+
                         <form class="register" action="<?php echo URL;?>nyskraning/nyskra" method="post">
                         <label for="nafn">Nafn:</label>
                         <input id="nafn" name="nafn" type="text" required>
@@ -20,7 +21,7 @@
                             <label for="email">Netfang:</label>
                             <input id="email" name="email" type="email" required>
                             <label for="username">Notendanafn:</label>
-                            <span id="user-availability-status"></span>
+                            <label for="username" id="user-availability-status"></label>
                         <input id="username" name="username" type="text" required onBlur="checkAvailability()"><br>
                             <label for="pass">Lykilorð:</label>
                         <input id="pass" name="pass" type="password" required>
@@ -29,6 +30,7 @@
 
                             <input id="btnyskra" name="nyskra" type="submit" value="Nýskrá">
                         </form>
+        <?php if(isset($fail)){echo "<h3 class='xk2'>Nýskráning gekk ekki, athugaðu upplýsingarnar þínar og reyndu aftur </h3>"; } ?>
         </div>
     </div>
 
@@ -38,7 +40,7 @@
     <div class="overlay">
         <div class="container">
             <div class="section-title center">
-                <h2><strong>Hvatningarorð</strong> dagsins</h2>
+                <h2><strong>Hvatningarorð</strong> Núins</h2>
                 <div class="line">
                     <hr>
                 </div>

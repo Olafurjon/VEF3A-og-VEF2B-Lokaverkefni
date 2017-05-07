@@ -1,5 +1,6 @@
-CREATE TABLE `Lokaverkefni`.`userbase` ( `userid` INT(255) NOT NULL , `name` VARCHAR(255) NOT NULL , `sex` VARCHAR(10) NULL , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `pass` VARCHAR(255) NOT NULL DEFAULT 'pass.123' , `date_joined` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `profilepic` VARCHAR(255) NULL , PRIMARY KEY (`userid`), UNIQUE (`username`)) ENGINE = InnoDB;
+﻿CREATE TABLE `Lokaverkefni`.`userbase` ( `userid` INT(255) NOT NULL , `name` VARCHAR(255) NOT NULL , `sex` VARCHAR(10) NULL , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `pass` VARCHAR(255) NOT NULL DEFAULT 'pass.123' , `date_joined` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `profilepic` VARCHAR(255) NULL , PRIMARY KEY (`userid`), UNIQUE (`username`)) ENGINE = InnoDB;
 ALTER TABLE `userbase` ADD `trainer_id` INT NULL DEFAULT NULL AFTER `profilepic`;
+ALTER TABLE `userbase` ADD `Status` VARCHAR(255) NULL DEFAULT NULL AFTER `profilepic`;
 
 CREATE TABLE `Lokaverkefni`.`brjostaefingar` ( `id` INT NOT NULL AUTO_INCREMENT , `nafn` VARCHAR NOT NULL , `hjalp` VARCHAR NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 INSERT INTO `brjostaefingar`(`nafn`, `hjalp`,`level`) 
@@ -87,5 +88,5 @@ INSERT INTO `magaaefingar`(`name`, `hjalp`, `level`) VALUES ("Kviður á bolta",
 ("Fótalyftur í vél","https://www.youtube.com/watch?v=ghwdoXHeiIk","Easy"),
 ("Fótalyftur í vél fætur út","https://www.youtube.com/watch?v=-1y41d45yfU","Medium")
 
+CREATE TABLE `Lokaverkefni`.`messagecentre` ( `msg_id` INT(255) NOT NULL AUTO_INCREMENT , `to_id` VARCHAR(255) NOT NULL , `from_id` VARCHAR(255) NOT NULL , `subject` VARCHAR(255) NOT NULL , `message` TEXT NOT NULL , PRIMARY KEY (`msg_id`)) ENGINE = InnoDB;
 
-gæti vantað einhver alter hérna inn..

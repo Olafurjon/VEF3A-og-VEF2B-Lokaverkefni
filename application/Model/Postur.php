@@ -15,9 +15,11 @@ namespace Mini\Model;
 use Mini\Core\Model;
 use MongoDB\Driver\Query;
 
-class thjalfun extends Model
+class Postur extends Model
 {
-
+    /**
+     * Get all songs from database
+     */
     public function getUserInfo($username)
     {
 
@@ -30,35 +32,32 @@ class thjalfun extends Model
         return $query->fetchAll();
     }
 
-    public function getTrainers()
+    public function checkMessage()
     {
-
-        $sql = "SELECT * FROM userbase WHERE Status ='Trainer' OR Status =  'Admin'";
-
+        $sql = "SELECT userid FROM userbase WHERE username = '".$_POST["username"]."'";
         $query = $this->db->prepare($sql);
         $query->execute();
+        $userid = $query->fetchAll();
+        $userid= $userid[0]->userid;
 
-
-        // fetchAll() is the PDO method that gets all result rows, here in object-style because we defined this in
-        // core/controller.php! If you prefer to get an associative array as the result, then do
-        // $query->fetchAll(PDO::FETCH_ASSOC); or change core/controller.php's PDO options to
-        // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
-        return $query->fetchAll();
-    }
-
-    public function getTrainees($trainer_id)
-    {
-
-        $sql = "SELECT * FROM userbase WHERE trainer_id ='".$trainer_id."'";
-
+        $sql = "SELECT count(*) as tala FROM messagecentre where to_id ='".$userid . "' AND lesid = 0";
         $query = $this->db->prepare($sql);
         $query->execute();
+        $object = $query->fetch();
+        $row = array($object);
+        $msgcount = $row[0]->tala;
+        if($msgcount>0) echo "<span class='undreadmsg'>". $msgcount."</span>";
+        else echo "<span class='undreadmsg'>. $msgcount. </span>";
 
-
-        return $query->fetchAll();
     }
 
-
+    /**
+     * @param $to
+     * @param $from
+     * @param $subject
+     * @param $message
+     * @return array
+     */
     public function sendMessage($to, $from, $subject, $message)
     {
         $sql = "SELECT userid FROM userbase WHERE name = '".$to."'";
@@ -94,31 +93,6 @@ class thjalfun extends Model
 
 
     }
-
-
-
-
-    public function checkforpic()
-    {
-        ob_start();
-        require APP . 'view/_templates/header.php';
-        $sql = "SELECT profilepic  FROM userbase where username ='". $_SESSION["username"]. "'";
-        $query = $this->db->prepare($sql);
-        $query->execute();
-        $object = $query->fetch();
-        $row = array($object);
-        $userpic = $row[0]->profilepic;
-        print $userpic;
-        ob_get_clean();
-    }
-
-    /**
-     * Delete a song in the database
-     * Please note: this is just an example! In a real application you would not simply let everybody
-     * add/update/delete stuff!
-     * @param int $song_id Id of song
-     */
-
 
 
 }

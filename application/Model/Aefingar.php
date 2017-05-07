@@ -16,9 +16,7 @@ use Mini\Core\Model;
 
 class Aefingar extends Model
 {
-    /**
-     * Get all songs from database
-     */
+
     public function getAllChest()
     {
 

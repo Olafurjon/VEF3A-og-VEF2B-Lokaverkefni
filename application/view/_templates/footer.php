@@ -38,7 +38,8 @@
 
 <!-- Javascripts
 ================================================== -->
-<script type="text/javascript" src="<?php echo URL; ?>js/main.js"></script>
-<script type="text/javascript" src="<?php echo URL?>/js/aefingaslider.js"></script>
+<script type="text/javascript" src="<?php echo URL ?>js/main.js"></script>
+<script type="text/javascript" src="<?php echo URL?>js/aefingaslider.js"></script>
+<script type="text/javascript" src="<?php echo URL?>js/checkmsg.js"></script>
 </body>
 </html>

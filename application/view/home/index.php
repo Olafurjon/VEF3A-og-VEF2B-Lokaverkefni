@@ -178,6 +178,7 @@
 <div id="tf-works">
 
     <div class="container"> <!-- Container -->
+
         <div class="section-title text-center center">
             <h2>KÍKTU A NOKKRAR<strong> ÆFINGAR</strong></h2>
             <div class="line">
@@ -186,10 +187,12 @@
             <div class="clearfix"></div>
             <small><em>Mikilvægt er að gleyma ekki vöðvaflokki því að vöðvarnir að framan geta ekki stækkað ef að vöðvarnir að aftan geta ekki stutt þá</em></small>
         </div>
-        <div class="space"></div>
 
+
+        <div class="space"></div>
         <div class="categories">
 
+            <div class="popup" id="media-popup"><label class="popuploka" for="popupgluggi">LOKA GLUGGA </label> <iframe name="popupgluggi" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
             <ul class="cat">
                 <li class="pull-left"><h4>Flokka eftir týpu:</h4></li>
                 <li class="pull-right">
@@ -207,8 +210,9 @@
             <div class="clearfix"></div>
         </div>
 
-        <div class="popup" id="media-popup"><iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
+
         <div id="lightbox" class="row">
+
 
             <?php $jsonaef = file_get_contents("http://178.62.25.29/JSON/tileaefingar.JSON");
             $aefingar = json_decode($jsonaef,true);
@@ -250,7 +254,7 @@
     <div class="overlay">
         <div class="container">
             <div class="section-title center">
-                <h2><strong>Hvatningarorð</strong> dagsins</h2>
+                <h2><strong>Hvatningarorð</strong> Núins</h2>
                 <div class="line">
                     <hr>
                 </div>

@@ -10,10 +10,7 @@ else
 {
     $session = false;
 };
-if(isset($error))
-{
-    $error = $true;
-}
+
 
 ?>
 <html lang="en">
@@ -26,21 +23,21 @@ if(isset($error))
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="<?php echo URL?>/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo URL?>/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css"  href="<?php echo URL; ?>css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URL;?>fonts/font-awesome/css/font-awesome.css">
     <!-- Slider
     ================================================== -->
-    <link href="<?php echo URL?>/css/owl.carousel.css" rel="stylesheet" media="screen">
-    <link href="<?php echo URL?>/css/owl.theme.css" rel="stylesheet" media="screen">
+    <link href="<?php echo URL?>css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="<?php echo URL?>css/owl.theme.css" rel="stylesheet" media="screen">
     <!-- Stylesheet
     ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="<?php echo URL?>/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo URL?>/css/responsive.css">
+    <link rel="stylesheet" type="text/css"  href="<?php echo URL?>css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URL?>css/responsive.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="<?php echo URL?>/js/jquery-3.2.0.min.js"></script>
-    <script type="text/javascript" src="<?php echo URL?>/js/aefingaslider.js"></script>
-    <script type="text/javascript" src="<?php echo URL?>/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="<?php echo URL?>js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="<?php echo URL?>js/aefingaslider.js"></script>
+    <script type="text/javascript" src="<?php echo URL?>js/modernizr.custom.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,7 +59,7 @@ if(isset($error))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand"  href="<?php echo URL; ?>">Sterkari<?php if($session == true){echo " <p class='under'>- skráður inn sem $username</p>";} else{} ?></a>
+                <a class="navbar-brand"  href="<?php echo URL; ?>">Sterkari<?php if($session == true){echo " <p class='under'>- skráður inn sem <u class='username'>$username</u></p>";} else{} ?></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,6 +70,7 @@ if(isset($error))
                     <?php if(isset($_SESSION['username'])){ echo "<li><a href=". URL."profile" ." class=\"page-scroll\">Mín Síða</a></li>";}
                     else {echo "<li><a href=". URL."nyskraning" . " class=\"page-scroll\">Nýskráning</a></li>";echo "<li><a href=". URL."innskraning" . " class=\"page-scroll\">Innskraning</a></li>";}?>
                     <li><a href="<?php URL ?>/thjalfun" class="page-scroll">Þjálfun</a></li>
+                    <?php if(isset($_SESSION['username'])){ echo "<li> <a class='messages' href='".URL."postur' class='page-scroll'> </a></li>";}  ?>
                     <li><a href="http://www.sterkari.eu/#tf-works" class="page-scroll">Flísar</a></li>
                     <li><a href="#tf-testimonials" class="page-scroll">Hvatningarorð</a></li>
                     <?php if(isset($_SESSION['username'])){ echo "<li><a href=". URL. 'profile/logoutlink'." class=\"page-scroll\">Skrá út</a></li>";} ?>

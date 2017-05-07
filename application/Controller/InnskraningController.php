@@ -68,17 +68,23 @@ class InnskraningController
 
             if (isset($_POST['innskra'])) {
                 $notandi = new Innskraning();
-                $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
+                if(password_verify($_POST['pass'],PASSWORD_BCRYPT))
+                {
+                    echo "<h3>Snilld</h3>";
+                }
+
+                $obj = $notandi->logIn($_POST['user'],$_POST['pass'] );
                 $ret = array($obj);
-                print_r($ret);
-                if ($ret[0]->username == $_POST['user']) {
+                if (password_verify($_POST['pass'],$ret[0]->pass)) {
                     $_SESSION['username'] = $_POST['user'];
                     ob_get_clean();
                     header('location:' . URL . 'profile');
                 }
                 else
                 {
-
+                    $fail = true;
+                    require APP . 'view/innskraning/index.php';
+                    require APP . 'view/_templates/footer.php';
                 }
 
 

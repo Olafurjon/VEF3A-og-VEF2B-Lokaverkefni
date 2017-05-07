@@ -1,9 +1,8 @@
 
-<!-- About Us Page
+<!-- Innskráning
 ==========================================-->
-<div id="tf-about">
-    <div class="container text-center">
-        <div class="col-md-6">
+<div id="tf-about ">
+    <div class="container text-center form-style-6 inn">
             <div class="section-title ">
                 <h4>Innskráning</h4>
             </div>
@@ -11,13 +10,13 @@
             <div class="clearfix"></div>
             <form class="register" action="<?php echo URL;?>innskraning/innskra" method="post">
                 <label for="user">Notendanafn:</label>
-                <?php if(isset($error)){ echo "<span class='valid'> Notendafn eða lykilorð ekki rétt  </span>";} ?>
+                <?php if(isset($fail)){ echo "<label for='user' class='xk2'> Notendafn eða lykilorð ekki rétt  </label>";} ?>
                 <input id="user" name="user" type="text"><br>
                 <label for="pass">Lykilorð:</label>
                 <input id="pass" name="pass" type="password"><br>
                 <input name="innskra" type="submit" value="Innskrá">
             </form>
-        </div>
+
 
         </div>
     </div>
@@ -28,7 +27,7 @@
     <div class="overlay">
         <div class="container">
             <div class="section-title center">
-                <h2><strong>Hvatningarorð</strong> dagsins</h2>
+                <h2><strong>Hvatningarorð</strong> Núins</h2>
                 <div class="line">
                     <hr>
                 </div>

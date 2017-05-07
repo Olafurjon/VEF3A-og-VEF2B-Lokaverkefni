@@ -1,11 +1,11 @@
 
-<!-- About Us Page
+<!-- Æfingasíða
 ==========================================-->
 <div id="tf-about">
     <div class="section-title profiletitle ">
         <h4>Æfingar</h4>
         <?php if(!isset($_SESSION['username'])) {echo "<p>Mundu að skrá þig inn til að komast á sérsniðin æfingarplön </p>";} ?>
-        <?php if((isset($_SESSION['username']) && $info[0]->trainer_id == null)) {echo "<p> <a href='".URL."/thjalfun'>Smelltu hér</a> til að sækja um þjálfara og fá sérsniðin plön </p>";} ?>
+        <?php if((isset($_SESSION['username']) && $info[0]->trainer_id == null || ($info[0]->Status != "Admin" || $info[0]->Status != "Trainer"))) {echo "<p> <a href='".URL."/thjalfun'>Smelltu hér</a> til að sækja um þjálfara og fá sérsniðin plön </p>";} ?>
 </div>
 
     <div class="aefingaslider">
@@ -17,8 +17,9 @@
         <a href="#upp" ><p class="bt btsida6"> Kviður </p></a>
 
     </div>
-    <div class="popup" id="media-popup"><iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
+
     <div class="container text-center ">
+        <div class="popup" id="media-popup"><label class="popuploka" for="popupgluggi">LOKA GLUGGA </label><iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
         <div id="Brjóst" class="slideraefing syna ">
         <table id="aefingar">
             <tr>
@@ -252,7 +253,7 @@
     <div class="overlay">
         <div class="container">
             <div class="section-title center">
-                <h2><strong>Hvatningarorð</strong> dagsins</h2>
+                <h2><strong>Hvatningarorð</strong> Núins</h2>
                 <div class="line">
                     <hr>
                 </div>

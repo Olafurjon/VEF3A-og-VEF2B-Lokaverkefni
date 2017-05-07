@@ -59,3 +59,5 @@ define('DB_NAME', 'Lokaverkefni');
 define('DB_USER', 'root');
 define('DB_PASS', '12345678');
 define('DB_CHARSET', 'utf8');
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);

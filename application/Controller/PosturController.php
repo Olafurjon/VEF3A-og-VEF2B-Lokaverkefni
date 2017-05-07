@@ -14,9 +14,10 @@
 
 namespace Mini\Controller;
 
+use Mini\Model\Postur;
 use Mini\Model\Thjalfun;
 
-class ThjalfunController
+class PosturController
 {
     /**
      * PAGE: index
@@ -28,16 +29,7 @@ class ThjalfunController
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
-        $thjalfun = new Thjalfun();
-        if(isset($username)) {
-            $info = $thjalfun->getUserInfo($_SESSION['username']);
-            $trainees = $thjalfun->getTrainees($info[0]->user);
-        }
-        $trainers = $thjalfun->getTrainers();
-
-
-        require APP . 'view/thjalfun/index.php';
-
+        require APP . 'view/postur/index.php';
         require APP . 'view/_templates/footer.php';
 
 
@@ -86,31 +78,20 @@ class ThjalfunController
             array_push($message, $_POST['nafntrainer']);
             require APP . 'view/_templates/header.php';
             require APP . 'view/thjalfun/index.php';
+
             require APP . 'view/_templates/footer.php';
         }
 
     }
 
 
-    public function logout()
-        {
-        $notandi = new Profile();
-        if(isset($_POST["logout"])) {
-            print("isset");
-            $notandi->logout();
-
-        }
-        print("logout");
-            #header("location: http://178.62.25.29/");
-    }
-
-
-
-    public function validation()
+    public function checkMsg()
     {
-        $notandi = new Nyskraning();
-        $notandi->validateForm();
+        $postur = new Postur();
+        $postur->checkMessage();
     }
+
+
 
 
 

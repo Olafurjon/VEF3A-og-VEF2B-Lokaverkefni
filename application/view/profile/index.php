@@ -1,21 +1,22 @@
-<?php header("Cache-Control: no-cache, must-revalidate") ?> <!-- Þessi lína hreinsar cacheið svo að vafrinn festist ekki á einni profile mynd -->
-<div id="tf-about tf-about-profile">
-    <div class="container text-center">
 
-            <div class="section-title profiletitle sectionh2 ">
+<div id="tf-about tf-about-profile">
+    <div class="container text-center ">
+
+            <div class="section-title profiletitle sectionh2   ">
                 <h4>Upplýsingar</h4>
             </div>
-            <div class="dpimg">
+            <div class="dpimg form-style-6 ">
 
                 <?php if ($info[0]->sex == "Kvenkyns"){ $pic = 'src="'.URL.'/img/profile/dp_default/defaultfemale.jpg"';} elseif ($info[0]->sex == "Annað"){$pic = 'src="'.URL.'/img/profile/dp_default/defaultother.jpg"';} else { $pic = 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}  ?>
             <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'?='.Date('U').'"';} else {echo $pic;}?>">
                 <form class="uploadform" action="<?php echo URL;?>profile/upload" method="post" enctype="multipart/form-data" >
+                    <label class="uploadtakki" for="image">Veldu mynd</label>
                     <input type="file" name="image" id="image"  >
                     <input  type="submit" name="upload" id="upload" value="Breyta" >
                 </form>
             </div>
 
-
+<div class="form-style-6">
                 <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
 
                     <label for="nafn">Nafns:</label>
@@ -36,7 +37,7 @@
                     <input id="datejoined" name="datejoined" type="datetime" value="<?php echo $info[0]->date_joined;?>" disabled >
                     <input id="btbreyta" name="breyta" type="submit" value="Breyta">
                 </form>
-
+</div>
             </div>
 
 
@@ -53,7 +54,7 @@
     <div class="overlay">
         <div class="container">
             <div class="section-title center">
-                <h2><strong>Hvatningarorð</strong> dagsins</h2>
+                <h2><strong>Hvatningarorð</strong> Núins</h2>
                 <div class="line">
                     <hr>
                 </div>

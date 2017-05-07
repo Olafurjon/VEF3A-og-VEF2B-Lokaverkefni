@@ -16,75 +16,13 @@ use Mini\Core\Model;
 
 class Innskraning extends Model
 {
-    /**
-     * Get all songs from database
-     */
-    public function getAllSongs()
-    {
-        $sql = "SELECT id, artist, track, link FROM song";
-        $query = $this->db->prepare($sql);
-        $query->execute();
-
-        // fetchAll() is the PDO method that gets all result rows, here in object-style because we defined this in
-        // core/controller.php! If you prefer to get an associative array as the result, then do
-        // $query->fetchAll(PDO::FETCH_ASSOC); or change core/controller.php's PDO options to
-        // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
-        return $query->fetchAll();
-    }
-
-    public function validateForm()
-    {
-        if(!empty($_POST["username"])) {
-        $sql = "SELECT count(*) as tala FROM userbase where username ='". $_POST["username"]. "'";
-        $query = $this->db->prepare($sql);
-        $query->execute();
-        $object = $query->fetch();
-        $row = array($object);
-        $user_count = $row[0]->tala;
-        if($user_count>0) echo "<span class='status-not-available'> Notendanafn er ekki laust.</span>";
-        else echo "<span class='status-available'> Notendanafn er Laust.</span>";
-    }
-    }
-
-
-
-    /**
-     * Add a song to database
-     * TODO put this explanation into readme and remove it from here
-     * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
-     * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
-     * to save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
-     * in the views (see the views for more info).
-     * @param string $artist Artist
-     * @param string $track Track
-     * @param string $link Link
-     */
-    public function nyskra($name, $username, $pass)
-    {
-
-        $sql = "INSERT INTO userbase (name, username, pass) VALUES (:name, :username, :pass)";
-        $query = $this->db->prepare($sql);
-        $parameters = array(':name' => $name, ':username' => $username, ':pass' => $pass);
-
-        // useful for debugging: you can see the SQL behind above construction by using:
-        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-
-        $query->execute($parameters);
-        return $query;
-
-
-
-
-    }
-
-
 
 
     public function logIn($username,$password)
     {
-        $sql = "SELECT username  FROM userbase WHERE username = :username AND pass = :pass LIMIT 1";
+        $sql = "SELECT username,pass  FROM userbase WHERE username = :username LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':username' => $username, ':pass' => $password);
+        $parameters = array(':username' => $username);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();

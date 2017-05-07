@@ -1,16 +1,27 @@
-<div class="container">
-    <div id="tf-about">
-        <div class="container text-center">
-            <div class="col-md-6">
-                <h3>Obbobbojj við ekki finna hvaða þú vilja :O</h3>
-                <?php if(isset($error)){print_r($error);} ?>
-                <img src="<?php echo URL.'img/error404.jpg'?>">
-                <h3>Ertu viss um að þú sért á réttum stað? </h3>
+
+<div id="tf-about tf-about-profile">
+    <div class="container text-center ">
+
+            <div class="section-title profiletitle sectionh2   ">
+                <h4>Pósthólf</h4>
             </div>
+            <?php if(!isset($username))
+            {
+                echo "<h2>Þú verður að vera skráður inn til að skoða póstinn... </h2> <p></p><br>" ;
+            }
+            else {
+            ?>
+
+
+
+            <?php }?>
+            <div class="clearfix"></div>
         </div>
     </div>
-</div>
-<div id="tf-testimonials" class="text-center">
+
+<!-- Hvatningarorðin
+==========================================-->
+<div id="tf-testimonials" class="text-center newpic">
     <div class="overlay">
         <div class="container">
             <div class="section-title center">
@@ -58,3 +69,8 @@
         </div>
     </div>
 </div>
+<script src="<?php echo URL; ?>js/formvalidate.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?PHP echo URL ?>js/bootstrap-filestyle.min.js"> </script>
+
+
+
