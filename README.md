@@ -1,7 +1,7 @@
 # VEF3A-og-VEF2B-Lokaverkefni
 
 Haldið verður áfram með verkefni 6 úr VEF3A og verður hún betrumbætt og bætt inn meira efni <br>
-Heimasíðuna er að finna hér: http://178.62.25.29/ verður sett á domain síðar
+Heimasíðuna er að finna hér: http://178.62.25.29/ eða hér http://www.sterkari.eu/
 
 # Um Heimasíðuna
 
