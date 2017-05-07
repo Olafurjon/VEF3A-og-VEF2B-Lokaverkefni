@@ -129,13 +129,14 @@ function main() {
             $(".popup").addClass("show-popup");
         });
 
-        $(".popup").on("click", function(e) {
+        $(".popuploka").on("click", function(e) {
             e.preventDefault();
             e.stopPropagation();
             var $popupIframe = $(".popup").find("iframe");
             $popupIframe.attr("src","null");
             $(".popup").removeClass("show-popup");
         });
+
 
         $(".popup > iframe").on("click", function(e) {
             e.stopPropagation();

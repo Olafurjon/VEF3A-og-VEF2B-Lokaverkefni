@@ -6,10 +6,14 @@ $(".clickme").click(function (e) {
     $(".MakeMessage").removeClass("fela");
     var val = e.target.className;
     val = val.split(" ");
+    console.log(val);
     val = val.slice(1);
+    console.log(val);
     val = val.toString();
-    val = val.replace(','," ");
-    $('input[name=nafntrainer]').val(val);
+    val = val.replace(',',' ');
+    val = val.replace(',',' ');
+    console.log(val.toString());
+    $('input[name=nafntrainer]').attr('value',val);
 
 
     });
